@@ -49,13 +49,13 @@
 <link rel="stylesheet" href="/css/main.css?v=7.0.1"/>
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon100.png?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png?v=7.0.1">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="秦人以卖马为业">
+  <meta name="description" content="你曾是少年">
 <meta name="keywords" content="python">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Joey&#39;s Blog">
 <meta property="og:url" content="http://benjieqiang.github.io/index.html">
 <meta property="og:site_name" content="Joey&#39;s Blog">
-<meta property="og:description" content="秦人以卖马为业">
+<meta property="og:description" content="你曾是少年">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Joey&#39;s Blog">
-<meta name="twitter:description" content="秦人以卖马为业">
+<meta name="twitter:description" content="你曾是少年">
 
 
 
@@ -233,6 +233,40 @@
         
         
           
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-archives">
 
     
@@ -244,6 +278,23 @@
     
 
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
 
   </li>
 
@@ -295,12 +346,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://benjieqiang.github.io/2019/03/25/hello-world/"/>
+    <link itemprop="mainEntityOfPage" href="http://benjieqiang.github.io/2019/03/25/range的左闭右开/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="benjamin"/>
-      <meta itemprop="description" content="秦人以卖马为业"/>
-      <meta itemprop="image" content="/images/avatar.gif"/>
+      <meta itemprop="description" content="你曾是少年"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -315,7 +366,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/25/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+                <a href="/2019/03/25/range的左闭右开/" class="post-title-link" itemprop="url">Python中的range为何设置为左闭右开</a>
               
             
           </h1>
@@ -340,24 +391,12 @@
                 
               
 
-              <time title="创建时间：2019-03-25 17:53:36" itemprop="dateCreated datePublished" datetime="2019-03-25T17:53:36+08:00">2019-03-25</time>
+              <time title="创建时间：2019-03-25 20:03:11 / 修改时间：20:58:38" itemprop="dateCreated datePublished" datetime="2019-03-25T20:03:11+08:00">2019-03-25</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-14 10:05:57" itemprop="dateModified" datetime="2018-07-14T10:05:57+08:00">2018-07-14</time>
               
             
           </span>
@@ -385,7 +424,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数"></span>
+                <span title="本文字数">503</span>
               
 
               
@@ -399,7 +438,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长"></span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -421,15 +460,20 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <p>一般来说：表示 2,3,…,12 这一串自然数有以下四种方法：</p>
+<p>a)2 ≤ <em>i</em> &lt; 13</p>
+<p>b)1 &lt; <em>i</em> ≤ 12</p>
+<p>c)2 ≤ <em>i</em> ≤ 12</p>
+<p>d)1 &lt; <em>i</em> &lt; 13</p>
+<p>具体原因有5点：</p>
+<ul>
+<li>Mesa（参考文献1）实际应用效果，第一种好；</li>
+<li>a,b前两种上下边界之和刚好等于数列长度；</li>
+<li>表示相邻数列时，前数列的上边界与后边界的下边界相等 ([2,13) 与 [13,15) 相邻或(1,12]和(12,15]))</li>
+<li>如果采用b，那在表示自然数时会不自然起来，因为最小的自然数是零，要表示从零开始的数，下边界的数就得是-1，(-1,5] 与第一种方法的 [0,6) 相比,显然a好；</li>
+<li>在二分法使用中，区间为[2,8],左右区间为[2,5],[5,8]，5多了，算法的结果不准，有的人说可以这样写[2,5]，[6,8]。是可以，但是在二分的时候还要对数据做处理才能分区间。</li>
+</ul>
+<p>参考链接：<br><a href="https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html" title="Why numbering should start at zero by Dijkstra" target="_blank" rel="noopener">Why numbering should start at zero by Dijkstra</a><br><a href="https://www.jianshu.com/p/5eaa330788e8" title="为什么 Python 的 Range 要设计成左开右闭区间？" target="_blank" rel="noopener">为什么 Python 的 Range 要设计成左开右闭区间？</a><br><a href="https://www.zhihu.com/question/24883243" title="为什么 Python 里面的 range 不包含上界？" target="_blank" rel="noopener">为什么 Python 里面的 range 不包含上界？</a></p>
 
           
         
@@ -502,8 +546,12 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="benjamin"/>
+            
               <p class="site-author-name" itemprop="name">benjamin</p>
-              <div class="site-description motion-element" itemprop="description">秦人以卖马为业</div>
+              <div class="site-description motion-element" itemprop="description">你曾是少年</div>
           </div>
 
           
@@ -626,7 +674,9 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数"></span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">1k</span>
   
 
   
@@ -635,7 +685,9 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长"></span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">1 分钟</span>
   
 </div>
 
