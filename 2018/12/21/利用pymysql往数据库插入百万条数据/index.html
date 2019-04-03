@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="一般来说：表示 2,3,…,12 这一串自然数有以下四种方法： a)2 ≤ i &amp;lt; 13 b)1 &amp;lt; i ≤ 12 c)2 ≤ i ≤ 12 d)1 &amp;lt; i &amp;lt; 13 具体原因有5点：  Mesa（参考文献1）实际应用效果，第一种好； a,b前两种上下边界之和刚好等于数列长度； 表示相邻数列时，前数列的上边界与后边界的下边界相等 ([2,13) 与 [13,15) 相邻或(">
+  <meta name="description" content="思路： 先创建一个自定义的数据库表； 生成一个列表，列表中的数据应该和数据库表中的每一列对应； 利用cursor.executemany 批量插入列表中的数据。  注意点：批量添加数据时，数据格式必须list[tuple(),tuple(),tuple()]  或者tuple(tuple(),tuple(),tuple()) 代码解析：1234567891011121314151617181920">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python中的range为何设置为左闭右开">
-<meta property="og:url" content="http://benjieqiang.github.io/2019/03/25/range的左闭右开/index.html">
+<meta property="og:title" content="利用 pymysql 往数据库插入百万条数据">
+<meta property="og:url" content="http://benjieqiang.github.io/2018/12/21/利用pymysql往数据库插入百万条数据/index.html">
 <meta property="og:site_name" content="Joey&#39;s Blog">
-<meta property="og:description" content="一般来说：表示 2,3,…,12 这一串自然数有以下四种方法： a)2 ≤ i &amp;lt; 13 b)1 &amp;lt; i ≤ 12 c)2 ≤ i ≤ 12 d)1 &amp;lt; i &amp;lt; 13 具体原因有5点：  Mesa（参考文献1）实际应用效果，第一种好； a,b前两种上下边界之和刚好等于数列长度； 表示相邻数列时，前数列的上边界与后边界的下边界相等 ([2,13) 与 [13,15) 相邻或(">
+<meta property="og:description" content="思路： 先创建一个自定义的数据库表； 生成一个列表，列表中的数据应该和数据库表中的每一列对应； 利用cursor.executemany 批量插入列表中的数据。  注意点：批量添加数据时，数据格式必须list[tuple(),tuple(),tuple()]  或者tuple(tuple(),tuple(),tuple()) 代码解析：1234567891011121314151617181920">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-25T12:58:38.660Z">
+<meta property="og:updated_time" content="2019-04-03T09:39:07.007Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python中的range为何设置为左闭右开">
-<meta name="twitter:description" content="一般来说：表示 2,3,…,12 这一串自然数有以下四种方法： a)2 ≤ i &amp;lt; 13 b)1 &amp;lt; i ≤ 12 c)2 ≤ i ≤ 12 d)1 &amp;lt; i &amp;lt; 13 具体原因有5点：  Mesa（参考文献1）实际应用效果，第一种好； a,b前两种上下边界之和刚好等于数列长度； 表示相邻数列时，前数列的上边界与后边界的下边界相等 ([2,13) 与 [13,15) 相邻或(">
+<meta name="twitter:title" content="利用 pymysql 往数据库插入百万条数据">
+<meta name="twitter:description" content="思路： 先创建一个自定义的数据库表； 生成一个列表，列表中的数据应该和数据库表中的每一列对应； 利用cursor.executemany 批量插入列表中的数据。  注意点：批量添加数据时，数据格式必须list[tuple(),tuple(),tuple()]  或者tuple(tuple(),tuple(),tuple()) 代码解析：1234567891011121314151617181920">
 
 
 
@@ -116,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="http://benjieqiang.github.io/2019/03/25/range的左闭右开/"/>
+  <link rel="canonical" href="http://benjieqiang.github.io/2018/12/21/利用pymysql往数据库插入百万条数据/"/>
 
 
 
@@ -126,7 +126,7 @@
   };
 </script>
 
-  <title>Python中的range为何设置为左闭右开 | Joey's Blog</title>
+  <title>利用 pymysql 往数据库插入百万条数据 | Joey's Blog</title>
   
 
 
@@ -346,7 +346,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://benjieqiang.github.io/2019/03/25/range的左闭右开/"/>
+    <link itemprop="mainEntityOfPage" href="http://benjieqiang.github.io/2018/12/21/利用pymysql往数据库插入百万条数据/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="benjamin"/>
@@ -363,7 +363,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python中的range为何设置为左闭右开
+          <h1 class="post-title" itemprop="name headline">利用 pymysql 往数据库插入百万条数据
 
               
             
@@ -389,16 +389,46 @@
                 
               
 
-              <time title="创建时间：2019-03-25 20:03:11 / 修改时间：20:58:38" itemprop="dateCreated datePublished" datetime="2019-03-25T20:03:11+08:00">2019-03-25</time>
+              <time title="创建时间：2018-12-21 00:32:24" itemprop="dateCreated datePublished" datetime="2018-12-21T00:32:24+08:00">2018-12-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-03 17:39:07" itemprop="dateModified" datetime="2019-04-03T17:39:07+08:00">2019-04-03</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -422,7 +452,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">503</span>
+                <span title="本文字数">1.9k</span>
               
 
               
@@ -436,7 +466,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -456,21 +486,13 @@
       
 
       
-        <p>一般来说：表示 2,3,…,12 这一串自然数有以下四种方法：</p>
-<p>a)2 ≤ <em>i</em> &lt; 13</p>
-<p>b)1 &lt; <em>i</em> ≤ 12</p>
-<p>c)2 ≤ <em>i</em> ≤ 12</p>
-<p>d)1 &lt; <em>i</em> &lt; 13</p>
-<p>具体原因有5点：</p>
-<ul>
-<li>Mesa（参考文献1）实际应用效果，第一种好；</li>
-<li>a,b前两种上下边界之和刚好等于数列长度；</li>
-<li>表示相邻数列时，前数列的上边界与后边界的下边界相等 ([2,13) 与 [13,15) 相邻或(1,12]和(12,15]))</li>
-<li>如果采用b，那在表示自然数时会不自然起来，因为最小的自然数是零，要表示从零开始的数，下边界的数就得是-1，(-1,5] 与第一种方法的 [0,6) 相比,显然a好；</li>
-<li>在二分法使用中，区间为[2,8],左右区间为[2,5],[5,8]，5多了，算法的结果不准，有的人说可以这样写[2,5]，[6,8]。是可以，但是在二分的时候还要对数据做处理才能分区间。</li>
-</ul>
-<p>参考链接：<br><a href="https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html" title="Why numbering should start at zero by Dijkstra" target="_blank" rel="noopener">Why numbering should start at zero by Dijkstra</a><br><a href="https://www.jianshu.com/p/5eaa330788e8" title="为什么 Python 的 Range 要设计成左开右闭区间？" target="_blank" rel="noopener">为什么 Python 的 Range 要设计成左开右闭区间？</a><br><a href="https://www.zhihu.com/question/24883243" title="为什么 Python 里面的 range 不包含上界？" target="_blank" rel="noopener">为什么 Python 里面的 range 不包含上界？</a></p>
-
+        <h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ol>
+<li>先创建一个自定义的数据库表；</li>
+<li>生成一个列表，列表中的数据应该和数据库表中的每一列对应；</li>
+<li>利用cursor.executemany <strong>批量插入</strong>列表中的数据。</li>
+</ol>
+<h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><p>批量添加数据时，数据格式必须list[tuple(),tuple(),tuple()]  或者tuple(tuple(),tuple(),tuple())</p>
+<h3 id="代码解析："><a href="#代码解析：" class="headerlink" title="代码解析："></a>代码解析：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># Author:benjamin</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建连接</span></span><br><span class="line">conn = pymysql.connect(host=<span class="string">'192.168.214.128'</span>, port=<span class="number">3306</span>, user=<span class="string">'root'</span>, passwd=<span class="string">'ben123'</span>, db=<span class="string">'db2'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建游标</span></span><br><span class="line">cursor = conn.cursor()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createTable</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    创建数据库表</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        sql = <span class="string">'''</span></span><br><span class="line"><span class="string">            create table mytable (</span></span><br><span class="line"><span class="string">            nid int not null auto_increment primary key,</span></span><br><span class="line"><span class="string">            name varchar(255) not null,</span></span><br><span class="line"><span class="string">            email varchar(255) not null,</span></span><br><span class="line"><span class="string">            extra text</span></span><br><span class="line"><span class="string">            )engine=innodb default charset=utf8</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        cursor.execute(sql)</span><br><span class="line">        conn.commit()</span><br><span class="line">        print(<span class="string">'create table ok!'</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        print(e)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myList</span><span class="params">(value)</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    生成一个列表，[('admin1', 'admin1qq.com', 'hahaadmin1'),...]</span></span><br><span class="line"><span class="string">    :param value: 自定义的数据量</span></span><br><span class="line"><span class="string">    :return: new_list</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    new_list = [] <span class="comment"># 新建一个空列表用来存储元组数据</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, value + <span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">        name = <span class="string">'admin'</span>+ str(i)</span><br><span class="line">        email = name + <span class="string">'@qq.com'</span></span><br><span class="line">        extra = <span class="string">'I am '</span>+ name</span><br><span class="line"></span><br><span class="line">        tup = (name,email,extra) <span class="comment"># 构造元组</span></span><br><span class="line">        new_list.append(tup)  <span class="comment"># [(),(),()...]</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">"*"</span>*<span class="number">5</span>+<span class="string">"generate list ok"</span>+<span class="string">"*"</span>*<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">return</span> new_list</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myInsert</span><span class="params">(newList)</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    数据库插入</span></span><br><span class="line"><span class="string">    :param newList: 传入的列表数据</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        sql = <span class="string">"insert into mytable(name,email,extra) values(%s,%s,%s)"</span> <span class="comment"># 要插入的数据</span></span><br><span class="line">        cursor.executemany(sql,newList) <span class="comment"># 执行插入数据</span></span><br><span class="line"></span><br><span class="line">        conn.commit()</span><br><span class="line">        cursor.close()</span><br><span class="line">        conn.close()</span><br><span class="line">        print(<span class="string">'insert ok'</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        print(e)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建数据表</span></span><br><span class="line">    createTable()</span><br><span class="line">    <span class="comment"># 选择要插入的数据量</span></span><br><span class="line">    value = <span class="number">1000000</span> <span class="comment"># 定义数据量</span></span><br><span class="line">    newList = myList(value)</span><br><span class="line">    myInsert(newList)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -491,6 +513,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
 
       
       
@@ -500,15 +528,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/22/mysql_note_2/" rel="next" title="mysql学习笔记2——视图，触发器，函数，存储过程，索引和分页">
-                <i class="fa fa-chevron-left"></i> mysql学习笔记2——视图，触发器，函数，存储过程，索引和分页
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/21/mysql_note_1/" rel="prev" title="mysql 学习笔记一：基本操作">
+                mysql 学习笔记一：基本操作 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -552,8 +580,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -696,6 +733,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路："><span class="nav-number">1.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点："><span class="nav-number">2.</span> <span class="nav-text">注意点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码解析："><span class="nav-number">3.</span> <span class="nav-text">代码解析：</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
