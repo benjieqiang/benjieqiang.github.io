@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://benjieqiang.github.io/"/>
-  <updated>2019-03-25T12:58:38.660Z</updated>
+  <updated>2019-07-07T02:21:24.518Z</updated>
   <id>http://benjieqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019校招经历</title>
+    <link href="http://benjieqiang.github.io/2019/07/07/20190706%E4%B8%AD%E5%85%B4%E6%8F%90%E5%89%8D%E6%89%B9%E4%B8%93%E4%B8%9A%E9%9D%A2%E9%9D%A2%E7%BB%8F/"/>
+    <id>http://benjieqiang.github.io/2019/07/07/20190706中兴提前批专业面面经/</id>
+    <published>2019-07-07T02:21:24.169Z</published>
+    <updated>2019-07-07T02:21:24.518Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="20190706中兴提前批专业面面经"><a href="#20190706中兴提前批专业面面经" class="headerlink" title="20190706中兴提前批专业面面经"></a>20190706中兴提前批专业面面经</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>首先楼主是一个基础特别不扎实的渣渣，开此贴的目的只是为了警示后人不要像我这样做，否则自己很被动。如果有些大神看到了这些内容，笑笑就行了，楼主知道自己很菜，也知道该如何去做，所以一些简单的问题没有回答上来，勿喷勿喷。</p><ul><li><strong>中兴的面试官给人的感觉是特别和蔼的，面试体验是非常不错的。</strong></li><li><strong>简历上不熟悉的不要写</strong></li></ul><h2 id="专业面"><a href="#专业面" class="headerlink" title="专业面"></a>专业面</h2><p><strong>自我介绍，</strong>这时候面试官趁着这个自我介绍的时候翻看你的简历。</p><p><strong>问项目：</strong>然后面试官让你讲下自己的项目，讲完项目后，他会问一些具体的细节，根据你简历上写的项目内容，问实现，问你认为你的项目中遇到的难点是什么？</p><p><strong>挑着简历上写的熟悉XXX挨个问。</strong></p><p>面向对象的特征？</p><blockquote><p>我一紧张只想起来了一个继承。。。刚开始就给面试官的印象不好。</p></blockquote><p>你的代码量多少？java这边做过项目吗？</p><blockquote><p>代码量，我解释了我刚开始学没多久，之前一直学Python，还没做java相关的项目。</p></blockquote><p>那你Python了解多少，python是面向对象语言吗？</p><blockquote><p>Python主要用了Django做了一个项目，但是没往简历上写，是面向对象语言。</p></blockquote><p>Python中的深拷贝和浅拷贝？</p><blockquote><p>简直是自己挖坑往里面跳啊，我支支吾吾说我忘了</p></blockquote><p>Html、CSS、JavaScript的理解？</p><blockquote><p>Html是静态的， CSS是装扮，JavaScript是让页面动起来。这里我觉得回答的不太满意。</p></blockquote><p>HTTP的长连接和短连接？</p><blockquote><p>听过名词，但具体还是忘了。</p></blockquote><p>java的整型有哪些？</p><blockquote><p>这个我一紧张就说了个int,float,面试官一直问还有吗？就这些吗？</p></blockquote><p>TCP/IP协议的分层模型？</p><blockquote><p>我把名字都说上来了，面试官感觉我像是在背书，所以他又问我Internet属于哪一层，TCP属于哪一层</p></blockquote><p>xml你知道吗？和HTML的区别？</p><blockquote><p>我说在servlet中用到了xml, 区别我说了一个语法上不一样，面试官看我回答不上来，又问了一个问题</p></blockquote><p>那它们两相同点呢？</p><blockquote><p>这。。。我说不会</p></blockquote><p>说出你常用的Linux命令，grep是干什么的？</p><blockquote><p>这个问题纯属自己给自己挖坑，因为我简历上写的熟悉linux常用命令，我就想起来了一个ps查进程的命令，面试官就接着提问grep的命令含义。</p></blockquote><p>你对Spring了解多少？</p><blockquote><p>只是听过，具体还没学呢。面试官就没问</p></blockquote><p>你的毕业设计做的是？</p><blockquote><p>自己说吧，反正讲清楚了，面试官会问一下你觉得毕设中的难点是什么？</p></blockquote><p>你未来为什么不从事本专业相关的工作？</p><blockquote><p>回答到这儿自己已经感觉凉了，我就说我喜欢软件开发，自己还是喜欢从事软件开发的工作</p></blockquote><p>楼主从面试大厅出来以后就觉得自己凉了。。。果不其然，凉的很透。写这些仅供研一的师弟师妹们参考，早点准备好。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;20190706中兴提前批专业面面经&quot;&gt;&lt;a href=&quot;#20190706中兴提前批专业面面经&quot; class=&quot;headerlink&quot; title=&quot;20190706中兴提前批专业面面经&quot;&gt;&lt;/a&gt;20190706中兴提前批专业面面经&lt;/h1&gt;&lt;h2 id=&quot;写
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Python中的range为何设置为左闭右开</title>
